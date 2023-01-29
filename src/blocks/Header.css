@@ -1,0 +1,140 @@
+@font-face {
+  font-family: "Inter";
+  font-weight: 400;
+  src: url("../fonts/Inter-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Bold.ttf") format("ttf");
+  font-weight: 500;
+}
+
+.header {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 32px;
+  justify-content: space-between;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.header__divider {
+  display: flex;
+  align-items: baseline;
+  border-bottom: 0.3px solid #395e66;
+  margin-top: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.header__logo {
+  width: 200px;
+  height: 40px;
+  margin-bottom: 0px;
+}
+
+.header__date {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  padding-left: 24px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-family: "Cabinet Grotesk", "Arial", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.navigation__container {
+  display: flex;
+  align-content: center;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.navigation__button-login {
+  align-self: center;
+  border: 2px solid #395e66;
+  border-radius: 10px;
+  background: #ffffff;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-left: 25px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 24px;
+  padding-right: 24px;
+  font-family: "Inter", "Arial", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #395e66;
+  cursor: pointer;
+}
+
+.navigation__button-login:hover {
+  background: #2bc016;
+  border: 2px solid #2bc016;
+  color: #ffffff;
+}
+
+.navigation__button-signup {
+  border: 2px solid #395e66;
+  border-radius: 10px;
+  background: #395e66;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 24px;
+  padding-right: 24px;
+  font-family: "Inter", "Arial", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.navigation__button-signup:hover {
+  background: #2bc016;
+  border: 2px solid #2bc016;
+  color: #ffffff;
+}
+
+.navigation__avatar {
+  margin-left: 12px;
+  margin-bottom: 0px;
+  object-fit: cover;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.navigation__username {
+  padding-left: 20px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-family: "Cabinet Grotesk", "Arial", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25px;
+  text-decoration: none;
+  color: #000000;
+  display: flex;
+  align-items: center;
+}
