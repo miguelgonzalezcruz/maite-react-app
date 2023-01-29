@@ -65,3 +65,29 @@
   align-items: center;
   justify-content: center;
 }
+
+@media screen and (max-width: 1000px) {
+  .hero__image-container {
+    display: none;
+  }
+
+  .hero__container {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .hero__title {
+    font-size: 45px;
+    line-height: 5p0x;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .hero {
+    padding-top: 35px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
