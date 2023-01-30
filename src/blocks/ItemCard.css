@@ -4,11 +4,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 325px;
-  height: 328px;
+  width: 350px;
+  height: 400px;
   background-color: #e9e9e9;
   border: 1px solid rgba(0, 0, 0, 0.3);
-  border-radius: 20px;
+  border-radius: 5px;
 }
 
 .card {
@@ -51,7 +51,7 @@
   color: rgba(0, 0, 0, 0.6);
 }
 
-.card__like {
+/* .card__like {
   width: 21px;
   height: 19px;
   cursor: pointer;
@@ -64,9 +64,9 @@
   border: none;
   padding: 0;
   transition: opacity, 0.1s linear;
-}
+} */
 
-.card__like_active {
+/* .card__like_active {
   background-image: url("../images/like-icon-active.svg");
   width: 21px;
   height: 19px;
@@ -79,7 +79,7 @@
   border: none;
   padding: 0;
   transition: opacity, 0.1s linear;
-}
+} */
 
 .card__like-container {
   padding-left: 10px;
