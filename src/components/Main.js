@@ -1,27 +1,24 @@
-import React from "react";
-
 import ItemCard from "./ItemCard";
 
 import "../blocks/Main.css";
 
-function Main({ cards }) {
+function Main({ cards, handleCardClick }) {
   return (
-    <main className="main__clothes">
+    <main className="main">
       <p className="main__description">
-        Algunas de las piezas que he restaurado y tienen un nuevo hogar
+        Algunas de las piezas que he restaurado y ya tienen un nuevo hogar
       </p>
-      <section className="main__cards">
+      <div className="main__cards">
         {cards
           .filter((card) => card.private === false)
-          .map((card) => (
+          .map((currentCard) => (
             <ItemCard
-              key={card._id}
-              _id={card._id}
-              name={card.name}
-              image={card.link}
+              key={currentCard._id}
+              card={currentCard}
+              cardClick={() => handleCardClick(currentCard)}
             />
           ))}
-      </section>
+      </div>
     </main>
   );
 }

@@ -1,14 +1,16 @@
-import React from "react";
 import "../blocks/ItemCard.css";
 
-function ItemCard({ _id, name, image }) {
+function ItemCard({ card, cardClick }) {
   return (
-    <li>
-      <div className="card__wrapper">
-        <div className="card"></div>
-        <img className="card__image" src={image} alt={name} name={name} />
-      </div>
-    </li>
+    <div className="card__wrapper">
+      <div className="card"></div>
+      <img
+        className="card__image"
+        src={card.link}
+        alt={card.name}
+        onClick={cardClick}
+      />
+    </div>
   );
 }
 

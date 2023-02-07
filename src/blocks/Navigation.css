@@ -11,9 +11,9 @@
 }
 
 .navigation__button-login {
-  border: 2px solid #395e66;
+  border: 2px solid #1a2513;
   border-radius: 10px;
-  background: #ffffff;
+  background: #eef5e9;
   margin-bottom: 0px;
   margin-top: 0px;
   margin-left: 25px;
@@ -25,20 +25,20 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
-  color: #395e66;
+  color: #1a2513;
   cursor: pointer;
 }
 
 .navigation__button-login:hover {
-  background: #2bc016;
-  border: 2px solid #2bc016;
-  color: #ffffff;
+  background: #6b705c;
+  border: 2px solid #6b705c;
+  color: #eef5e9;
 }
 
 .navigation__button-signup {
-  border: 2px solid #395e66;
+  border: 2px solid #1a2513;
   border-radius: 10px;
-  background: #395e66;
+  background: #1a2513;
   margin-bottom: 0px;
   margin-top: 0px;
   padding-top: 18px;
@@ -49,14 +49,14 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
-  color: #ffffff;
+  color: #eef5e9;
   cursor: pointer;
 }
 
 .navigation__button-signup:hover {
-  background: #2bc016;
-  border: 2px solid #2bc016;
-  color: #ffffff;
+  background: #6b705c;
+  border: 2px solid #6b705c;
+  color: #eef5e9;
 }
 
 @media screen and (max-width: 600px) {
@@ -103,7 +103,7 @@
     font-size: 18px;
     font-weight: 500;
     line-height: 24px;
-    color: #000000;
+    color: #1a2513;
     cursor: pointer;
     margin-top: 25px;
   }
@@ -111,7 +111,7 @@
   .navigation__button-signup:hover {
     background: none;
     border: none;
-    color: #2bc016;
+    color: #6b705c;
   }
 
   .navigation__button-login {
@@ -127,7 +127,7 @@
     font-size: 18px;
     font-weight: 500;
     line-height: 24px;
-    color: #000000;
+    color: #1a2513;
     cursor: pointer;
     margin-left: 0px;
     margin-top: 15px;
@@ -136,6 +136,6 @@
   .navigation__button-login:hover {
     background: none;
     border: none;
-    color: #2bc016;
+    color: #6b705c;
   }
 }

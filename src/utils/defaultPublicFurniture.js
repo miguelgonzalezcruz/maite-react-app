@@ -33,7 +33,7 @@ export const defaultPublicFurniture = [
     link: "https://images.unsplash.com/photo-1617638924751-cc232f82ecf9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzJ8fHRhYmxlfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.",
-    private: false,
+    private: true,
   },
   {
     _id: 4,
