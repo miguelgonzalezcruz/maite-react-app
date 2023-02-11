@@ -7,6 +7,7 @@ export const defaultPublicFurniture = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.",
     private: false,
+    booked: false,
   },
   {
     _id: 1,
@@ -16,6 +17,7 @@ export const defaultPublicFurniture = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.",
     private: false,
+    booked: false,
   },
   {
     _id: 2,
@@ -25,6 +27,7 @@ export const defaultPublicFurniture = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.",
     private: false,
+    booked: false,
   },
   {
     _id: 3,
@@ -34,6 +37,7 @@ export const defaultPublicFurniture = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.",
     private: true,
+    booked: false,
   },
   {
     _id: 4,
@@ -43,6 +47,7 @@ export const defaultPublicFurniture = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.",
     private: true,
+    booked: false,
   },
   {
     _id: 5,
@@ -52,5 +57,6 @@ export const defaultPublicFurniture = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.",
     private: true,
+    booked: false,
   },
 ];

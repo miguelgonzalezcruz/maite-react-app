@@ -22,20 +22,18 @@ function request(url, options) {
 }
 
 const register = (email, password, name, surname, phone) => {
-  return request(`${baseURL}`, {
+  return request(`${baseURL}/signup`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      properties: {
-        email,
-        password,
-        name,
-        surname,
-        phone,
-        typeofuser: "user",
-      },
+      email,
+      password,
+      name,
+      surname,
+      phone,
+      typeofuser: "user",
     }),
   });
 };
