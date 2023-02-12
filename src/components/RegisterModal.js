@@ -13,6 +13,7 @@ const RegisterModal = ({
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [phone, setPhone] = useState("");
+  const [typeofuser, settypeofuser] = useState("user");
 
   useEffect(() => {
     setEmail("");
@@ -42,9 +43,13 @@ const RegisterModal = ({
     setPhone(e.target.value);
   };
 
+  const handletypeofuser = (e) => {
+    settypeofuser(e.target.value);
+  };
+
   function handleSubmit(e) {
     e.preventDefault();
-    onRegister(email, password, name, surname, phone);
+    onRegister(email, password, name, surname, phone, typeofuser);
   }
 
   return (
@@ -107,6 +112,13 @@ const RegisterModal = ({
         placeholder="Enter phone"
         onChange={handlePhone}
         required
+      />
+      <input
+        type="text"
+        name="typeofuser"
+        value={typeofuser}
+        onChange={handletypeofuser}
+        hidden
       />
     </ModalWithForm>
   );

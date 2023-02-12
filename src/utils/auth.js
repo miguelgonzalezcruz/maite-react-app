@@ -21,7 +21,7 @@ function request(url, options) {
   return fetch(url, options).then(checkResponse);
 }
 
-const register = (email, password, name, surname, phone) => {
+const register = (email, password, name, surname, phone, typeofuser) => {
   return request(`${baseURL}/signup`, {
     method: "POST",
     headers: {

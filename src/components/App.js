@@ -68,8 +68,15 @@ function App() {
   };
 
   // ----------------- Register Modal -----------------
-  const handleRegister = (email, password, name, surname, phone) => {
-    register(email, password, name, surname, phone)
+  const handleRegister = (
+    email,
+    password,
+    name,
+    surname,
+    phone,
+    typeofuser
+  ) => {
+    register(email, password, name, surname, phone, typeofuser)
       .then((res) => {
         console.log(res);
         if (res) {
