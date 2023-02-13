@@ -7,6 +7,7 @@ const RegisterModal = ({
   closePopup,
   closeEsc,
   onRegister,
+  buttonText,
 }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -61,7 +62,7 @@ const RegisterModal = ({
       closeEsc={closeEsc}
       closePopup={closePopup}
       handleSubmit={handleSubmit}
-      buttonText="register"
+      buttonText={buttonText}
     >
       <label className="popup__input-label">Email</label>
       <input

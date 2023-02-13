@@ -1,14 +1,11 @@
 import React from "react";
 import Main from "./Main";
 
-function Profile({ cards, onCardClick, onCardLike, onCardDelete }) {
+function Profile() {
   return (
-    <Main
-      cards={cards}
-      onCardClick={onCardClick}
-      onCardLike={onCardLike}
-      onCardDelete={onCardDelete}
-    />
+    <div>
+      <p>Esto es Profile</p>
+    </div>
   );
 }
 

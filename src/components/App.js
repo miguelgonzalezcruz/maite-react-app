@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Route } from "react-router-dom";
-import { Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
+
 import "../blocks/App.css";
 
 // ----------------- Components -----------------
@@ -32,6 +32,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [isRegisterPopupActive, setIsRegisterPopupActive] = useState(false);
   const [isLoginPopupActive, setIsLoginPopupActive] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   // const history = useHistory();
 
   const handleCardClick = (card) => {
@@ -76,28 +77,59 @@ function App() {
     phone,
     typeofuser
   ) => {
+    setIsLoading(true);
     register(email, password, name, surname, phone, typeofuser)
       .then((res) => {
         console.log(res);
         if (res) {
+          handleLogin(res.email, password);
           setIsLogged(true);
         }
       })
       .then(handleClose)
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   // ----------------- Login Modal -----------------
   const handleLogin = (email, password) => {
+    setIsLoading(true);
     login(email, password)
       .then((res) => {
         if (res) {
+          localStorage.setItem("jwt", res.token);
+          handleAuthorize();
           setIsLogged(true);
         }
       })
       .then(handleClose)
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
+
+  // ----------------- Authorize -----------------
+
+  const handleAuthorize = () => {
+    authorize(localStorage.getItem("jwt"))
+      .then((user) => {
+        if (user) {
+          setIsLogged(true);
+          setCurrentUser(user);
+        } else {
+          setIsLogged(false);
+          setCurrentUser({});
+        }
+      })
       .catch((err) => console.log(err));
   };
+
+  useEffect(() => {
+    handleAuthorize();
+  }, []);
 
   // ----------------- Item Modal -----------------
 
@@ -118,14 +150,28 @@ function App() {
               setIsPopupActive("login");
             }}
           />
-          <Hero
-            handleRegister={handleRegister}
-            openRegisterPopup={() => {
-              setIsPopupActive("register");
-            }}
-          />
-          <Main cards={defaultFurniture} handleCardClick={handleCardClick} />
-          <About />
+          <Switch>
+            <Route exact path="/">
+              <Hero
+                handleRegister={handleRegister}
+                openRegisterPopup={() => {
+                  setIsPopupActive("register");
+                }}
+              />
+
+              <Main
+                cards={defaultFurniture}
+                handleCardClick={handleCardClick}
+              />
+
+              <About />
+            </Route>
+
+            <ProtectedRoute path="/about" isLogged={isLogged}>
+              <Profile />
+            </ProtectedRoute>
+          </Switch>
+
           <Footer />
 
           {isPopupActive === "cardPopup" && (
@@ -147,6 +193,7 @@ function App() {
               closeEsc={handleCloseEsc}
               closePopup={handleCloseEvent}
               onRegister={handleRegister}
+              buttonText={isLoading ? "Saving..." : "Save"}
             />
           )}
 
