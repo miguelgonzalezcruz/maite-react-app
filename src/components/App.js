@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useHistory } from "react-router-dom";
 
 import "../blocks/App.css";
 
@@ -33,7 +33,7 @@ function App() {
   const [isRegisterPopupActive, setIsRegisterPopupActive] = useState(false);
   const [isLoginPopupActive, setIsLoginPopupActive] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  // const history = useHistory();
+  const history = useHistory();
 
   const handleCardClick = (card) => {
     setSelectedCard(card);
