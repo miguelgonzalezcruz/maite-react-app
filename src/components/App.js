@@ -12,6 +12,7 @@ import Profile from "./Profile";
 import ItemModal from "./ItemModal";
 import RegisterModal from "./RegisterModal";
 import LoginModal from "./LoginModal";
+import BookModal from "./BookModal";
 import About from "./About";
 import Footer from "./Footer";
 import ProtectedRoute from "./ProtectedRoute";
@@ -36,6 +37,11 @@ function App() {
   const history = useHistory();
 
   const handleCardClick = (card) => {
+    setSelectedCard(card);
+    setIsPopupActive("cardPopup");
+  };
+
+  const handleCardBook = (card) => {
     setSelectedCard(card);
     setIsPopupActive("cardPopup");
   };
@@ -131,6 +137,15 @@ function App() {
     handleAuthorize();
   }, []);
 
+  // ----------------- Logout -----------------
+
+  const handleLogout = () => {
+    localStorage.removeItem("jwt");
+    setIsLogged(false);
+    setCurrentUser({});
+    history.push("/login");
+  };
+
   // ----------------- Item Modal -----------------
 
   React.useEffect(() => {
@@ -142,7 +157,10 @@ function App() {
       <div className="page">
         <div className="page__content">
           <Header
+            isLogged={isLogged}
+            currentUser={currentUser}
             handleRegister={handleRegister}
+            handleLogout={handleLogout}
             openRegisterPopup={() => {
               setIsPopupActive("register");
             }}
@@ -157,11 +175,16 @@ function App() {
                 openRegisterPopup={() => {
                   setIsPopupActive("register");
                 }}
+                isLogged={isLogged}
+                currentUser={currentUser}
               />
 
               <Main
                 cards={defaultFurniture}
                 handleCardClick={handleCardClick}
+                handleCardBook={handleCardBook}
+                isLogged={isLogged}
+                currentUser={currentUser}
               />
 
               <About />
@@ -201,6 +224,17 @@ function App() {
             <LoginModal
               isOpen={isPopupActive === "login"}
               name="login"
+              onClose={handleClose}
+              closeEsc={handleCloseEsc}
+              closePopup={handleCloseEvent}
+              onLogin={handleLogin}
+            />
+          )}
+
+          {isPopupActive === "book" && (
+            <BookModal
+              isOpen={isPopupActive === "book"}
+              name="book"
               onClose={handleClose}
               closeEsc={handleCloseEsc}
               closePopup={handleCloseEvent}

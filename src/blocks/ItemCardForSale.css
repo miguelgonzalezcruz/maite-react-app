@@ -1,0 +1,161 @@
+.card__wrapper-forsale {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  height: 400px;
+  border: solid 0.3px #8d99ae;
+  opacity: 0.9;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.card__wrapper-forsale:hover {
+  box-shadow: 0 0 10px rgba(141, 153, 174, 0.3);
+  opacity: 1;
+}
+
+.card-forsale__image {
+  object-fit: cover;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+}
+
+.card-forsale__content {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 1;
+  background-color: rgb(255, 255, 255, 0.4);
+}
+
+.card-forsale__content-title {
+  color: #000000;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  margin: 0;
+  padding-left: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card-forsale__book-button {
+  border: 1px solid #1a2513;
+  border-radius: 2px;
+  background: #fff;
+  margin: 0;
+  margin-right: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-family: "Inter", "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #1a2513;
+  cursor: pointer;
+}
+
+.card-forsale__book-button:hover {
+  background: #1a2513;
+  border: 1px solid #1a2513;
+  color: #fff;
+}
+
+/* .card__wrapper-forsale {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  height: 400px;
+  background-color: #e9e9e9;
+  border: none;
+  border-radius: 2px;
+  opacity: 0.9;
+}
+
+.card__wrapper-forsale:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  opacity: 1;
+}
+
+.card-forsale {
+  display: flex;
+  padding-left: 112px;
+  padding-right: 112px;
+  padding-top: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-forsale__title-container {
+  background-color: #fff;
+  border-radius: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.card-forsale__image {
+  object-fit: cover;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+}
+
+.card-forsale__title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.card-forsale__like-container {
+  padding-left: 10px;
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+
+.card-forsale__book-button {
+  border: 1px solid #1a2513;
+  border-radius: 5px;
+  background: #eef5e9;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-family: "Inter", "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #1a2513;
+  cursor: pointer;
+}
+
+.card-forsale__book-button:hover {
+  background: #6b705c;
+  border: 1px solid #6b705c;
+  color: #eef5e9;
+} */

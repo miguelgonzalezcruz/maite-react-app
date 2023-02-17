@@ -6,7 +6,13 @@ import "../blocks/Navigation.css";
 
 import logo from "../images/logo-maitereciclando.svg";
 
-function Header({ openRegisterPopup, openLoginPopup, isLogged, currentUser }) {
+function Header({
+  openRegisterPopup,
+  openLoginPopup,
+  isLogged,
+  currentUser,
+  handleLogout,
+}) {
   return (
     <header className="header">
       <div className="header__container">
@@ -21,9 +27,15 @@ function Header({ openRegisterPopup, openLoginPopup, isLogged, currentUser }) {
         <div className="navigation__container">
           {isLogged ? (
             <>
-              <Link to="/profile" className="navigation__username">
-                {currentUser.name}
-              </Link>
+              {/* <Link to="/about" className="navigation__username"> */}
+              <p>Hello {currentUser.name}, you can start booking now.</p>
+              <button
+                className="navigation__button-login"
+                onClick={handleLogout}
+              >
+                Log Out
+              </button>
+              {/* </Link> */}
             </>
           ) : (
             <>
