@@ -16,24 +16,24 @@ https://github.com/miguelgonzalezcruz/maite-express-back
 
 The web app will have two pages:
 
-1.- A public page that includes basic information about the craftsman, her work, and examples of her sold furniture placed in their final destinations (kitchen, dining room, and other places) in a card format.
-2.- A private page, accessible through a free login, will display furniture for sale in card format. Each product card will feature one picture, title, price, and a "Book" button.
+1. A public page that includes basic information about the craftsman, her work, and examples of her sold furniture placed in their final destinations (kitchen, dining room, and other places) in a card format.
+2. A private page, accessible through a free login, will display furniture for sale in card format. Each product card will feature one picture, title, price, and a "Book" button.
 
 ### `Interactivity on the private page`
 
-Logged users can book pieces of furniture via de web app.
+- Logged users can book pieces of furniture via de web app.
 
-Clicking on the card image will open a pop-up with a picture of the furniture and product description.
+- Clicking on the card image will open a pop-up with a picture of the furniture and product description.
 
-The "Book" button will open a pop-up with a contact form prefilled with the user's contact information, furniture ID, price, and a not-mandatory comments field.
+- The "Book" button will open a pop-up with a contact form prefilled with the user's contact information, furniture ID, price, and a not-mandatory comments field.
 
-Once the user clicks "Send", the app will send the information via email and the "Book" button will be deactivated and display a "Booked" message.
+- Once the user clicks "Send", the app will send the information via email and the "Book" button will be deactivated and display a "Booked" message.
 
-The app will have three user levels:
+- The app will have three user levels:
 
-Visitors will only have access to public information and cards of products sold.
-Logged clients can view products for sale, and book products.
-Superuser Admin can upload, modify, delete, and reactivate products for sale. This user can also modify and delete publicly sold products.
+- Visitors will only have access to public information and cards of products sold.
+  Logged clients can view products for sale, and book products.
+  Superuser Admin can upload, modify, delete, and reactivate products for sale. This user can also modify and delete publicly sold products.
 
 ### `API integration`
 
