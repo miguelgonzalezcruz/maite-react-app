@@ -2,10 +2,10 @@
 
 ### `Project Stages`
 
-Stage 1: Front and back code + Registration + Login + CRM API implementation
-Stage 2: Admin to be able to upload furniture with pricing (+ delete it) + User be able to book furniture
-Stage 3: Responsive Design
-Stage 4: Upload to a live server + domain
+1. Front and back code + Registration + Login + CRM API implementation
+2. Admin to be able to upload furniture with pricing (+ delete it) + User be able to book furniture
+3. Responsive Design
+4. Upload to a live server + domain
 
 ### `Backend Code`
 
