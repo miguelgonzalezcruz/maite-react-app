@@ -29,11 +29,11 @@ The web app will have two pages:
 
 - Once the user clicks "Send", the app will send the information via email and the "Book" button will be deactivated and display a "Booked" message.
 
-- The app will have three user levels:
+- ** The app will have three user levels: **
 
-- Visitors will only have access to public information and cards of products sold.
-  Logged clients can view products for sale, and book products.
-  Superuser Admin can upload, modify, delete, and reactivate products for sale. This user can also modify and delete publicly sold products.
+1. Visitors will only have access to public information and cards of products sold.
+2. Logged clients can view products for sale, and book products.
+3. Superuser Admin can upload, modify, delete, and reactivate products for sale. This user can also modify and delete publicly sold products.
 
 ### `API integration`
 
