@@ -10,7 +10,9 @@ function ItemCardForSale({ card, cardClick, bookClick }) {
         onClick={cardClick}
       />
       <div class="card-forsale__content">
-        <h2 className="card-forsale__content-title">{card.name}</h2>
+        <h2 className="card-forsale__content-title">
+          {card.name}, {card.price}
+        </h2>
         <div className="">
           <button className="card-forsale__book-button" onClick={bookClick}>
             Book Now

@@ -1,68 +1,40 @@
-This is my first own project
+## Project: Web application for a craftsman to sell her pieces of furniture.
 
-## Available Scripts
+### `Project Stages`
 
-In the project directory, you can run:
+Stage 1: Front and back code + Registration + Login + CRM API implementation
+Stage 2: Admin to be able to upload furniture with pricing (+ delete it) + User be able to book furniture
+Stage 3: Responsive Design
+Stage 4: Upload to a live server + domain
 
-### `npm start`
+### `Backend Code`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+You can find the backend code here:
+https://github.com/miguelgonzalezcruz/maite-express-back
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `Description`
 
-### `npm test`
+The web app will have two pages:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1.- A public page that includes basic information about the craftsman, her work, and examples of her sold furniture placed in their final destinations (kitchen, dining room, and other places) in a card format.
+2.- A private page, accessible through a free login, will display furniture for sale in card format. Each product card will feature one picture, title, price, and a "Book" button.
 
-### `npm run build`
+### `Interactivity on the private page`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Logged users can book pieces of furniture via de web app.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Clicking on the card image will open a pop-up with a picture of the furniture and product description.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The "Book" button will open a pop-up with a contact form prefilled with the user's contact information, furniture ID, price, and a not-mandatory comments field.
 
-### `npm run eject`
+Once the user clicks "Send", the app will send the information via email and the "Book" button will be deactivated and display a "Booked" message.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The app will have three user levels:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Visitors will only have access to public information and cards of products sold.
+Logged clients can view products for sale, and book products.
+Superuser Admin can upload, modify, delete, and reactivate products for sale. This user can also modify and delete publicly sold products.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### `API integration`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The app will be integrated with Hupspot's free CRM API (https://developers.hubspot.com/docs/api/crm/contacts), allowing for easy tracking of leads. When a user sign-up, the app will push the contact information to Hubspot CRM
