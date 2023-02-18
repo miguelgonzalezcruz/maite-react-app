@@ -13,8 +13,15 @@ function checkResponse(res) {
   }
 }
 
+// function request(url, options) {
+//   return fetch(url, options).then(checkResponse);
+// }
+
 function request(url, options) {
-  return fetch(url, options).then(checkResponse);
+  return fetch(url, {
+    ...options,
+    mode: "cors",
+  }).then(checkResponse);
 }
 
 const register = (email, password, name, surname, phone, typeofuser) => {
