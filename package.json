@@ -2,6 +2,7 @@
   "name": "maite-react-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://maiteapp.students.nomoredomainssbs.ru/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -17,7 +18,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && scp -r ./build/* miguel_glez_cruz@maiteapp.students.nomoredomainssbs.ru:/home/miguel_glez_cruz/frontend"
   },
   "eslintConfig": {
     "extends": [
