@@ -80,7 +80,7 @@ const RegisterModal = ({
         type="password"
         name="password"
         value={password}
-        placeholder="Enter password"
+        placeholder="minlength: 8"
         onChange={handlePassword}
         required
       />
@@ -110,7 +110,7 @@ const RegisterModal = ({
         type="tel"
         name="phone"
         value={phone}
-        placeholder="Enter phone"
+        placeholder="minlength: 5, maxlength: 20"
         onChange={handlePhone}
         required
       />
