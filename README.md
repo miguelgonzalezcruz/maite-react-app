@@ -1,11 +1,14 @@
 ## Project: Web application for a craftsman to sell her pieces of furniture.
 
+**Changed the Project Stages. Please find the new ones below**
+
 ### `Project Stages`
 
-1. Front and back code + Registration + Login + CRM API implementation
-2. Admin to be able to upload furniture with pricing (+ delete it) + User be able to book furniture
-3. Responsive Design
-4. Upload to a live server + domain
+1. Front and back code + Registration + Login
+2. Upload to a live server + domain
+3. Admin to be able to upload furniture with pricing (+ delete it) + User be able to book furniture
+4. CRM API implementation
+5. Responsive Design
 
 ### `Backend Code`
 
