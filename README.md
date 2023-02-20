@@ -37,4 +37,4 @@ The web app will have two pages:
 
 ### `API integration`
 
-The app will be integrated with Hupspot's free CRM API (https://developers.hubspot.com/docs/api/crm/contacts), allowing for easy tracking of leads. When a user sign-up, the app will push the contact information to Hubspot CRM
+The app will be integrated with Hupspot's free CRM API (https://developers.hubspot.com/docs/api/crm/contacts), allowing for easy tracking of leads. When a user sign-up, the app will push the contact information to Hubspot CRM.
