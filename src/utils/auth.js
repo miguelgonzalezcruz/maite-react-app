@@ -1,4 +1,9 @@
-const baseURL = "http://localhost:3001";
+const baseURL =
+  process.env.NODE_ENV === "production"
+    ? "https://api.maiteapp.students.nomoredomainssbs.ru"
+    : "http://localhost:3001";
+
+// const baseURL = "http://localhost:3001";
 
 function checkResponse(res) {
   if (res.ok) {
@@ -9,6 +14,7 @@ function checkResponse(res) {
 }
 
 function request(url, options) {
+  console.log("request", url, options);
   return fetch(url, options).then(checkResponse);
 }
 
@@ -41,6 +47,7 @@ const login = (email, password) => {
 };
 
 const authorize = (token) => {
+  console.log("authorize", token);
   return request(`${baseURL}/users/me`, {
     method: "GET",
     headers: {

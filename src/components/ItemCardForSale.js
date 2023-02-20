@@ -4,12 +4,12 @@ function ItemCardForSale({ card, cardClick, bookClick }) {
   return (
     <div className="card__wrapper-forsale">
       <img
-        class="card-forsale__image"
+        className="card-forsale__image"
         src={card.link}
         alt={card.name}
         onClick={cardClick}
       />
-      <div class="card-forsale__content">
+      <div className="card-forsale__content">
         <h2 className="card-forsale__content-title">
           {card.name}, {card.price}
         </h2>
