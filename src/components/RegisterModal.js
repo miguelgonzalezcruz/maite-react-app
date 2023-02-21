@@ -110,7 +110,7 @@ const RegisterModal = ({
         type="tel"
         name="phone"
         value={phone}
-        placeholder="Enter phone"
+        placeholder="minlength: 5, maxlength: 20"
         onChange={handlePhone}
         required
       />
