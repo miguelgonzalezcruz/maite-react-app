@@ -1,5 +1,9 @@
 ## Project: Web application for a craftsman to sell her pieces of furniture.
 
+### `Live Version`
+
+Check the live version here: https://maiteapp.students.nomoredomainssbs.ru/
+
 **Changed the Project Stages. Please find the new ones below**
 
 ### `Project Stages`
