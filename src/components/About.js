@@ -3,7 +3,7 @@ import "../blocks/About.css";
 
 function About() {
   return (
-    <div className="about">
+    <section className="about">
       <div className="about__container">
         <h2 className="about__title">Random Title</h2>
         <p className="about__text">
@@ -26,7 +26,7 @@ function About() {
           qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui.
         </p>
       </div>
-    </div>
+    </section>
   );
 }
 

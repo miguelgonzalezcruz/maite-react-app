@@ -12,7 +12,7 @@ function Main({
   currentUser,
 }) {
   return (
-    <main>
+    <section>
       {isLogged ? (
         <>
           {/* <div>
@@ -26,9 +26,11 @@ function Main({
                 .filter((card) => card.private === true)
                 .map((currentCard) => (
                   <ItemCardForSale
+                    currentUser={currentUser}
                     key={currentCard._id}
                     card={currentCard}
-                    cardClick={() => handleCardBook(currentCard)}
+                    cardClick={() => handleCardClick(currentCard)}
+                    bookClick={() => handleCardBook(currentCard)}
                   />
                 ))}
             </div>
@@ -54,7 +56,7 @@ function Main({
           </div>
         </>
       )}
-    </main>
+    </section>
   );
 }
 

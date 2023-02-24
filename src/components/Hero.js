@@ -4,7 +4,7 @@ import heroimage from "../images/hero-image.jpeg";
 
 function Hero({ openRegisterPopup, isLogged }) {
   return (
-    <div className="hero">
+    <section className="hero">
       {isLogged ? (
         <>
           <div></div>
@@ -29,7 +29,7 @@ function Hero({ openRegisterPopup, isLogged }) {
           </div>
         </>
       )}
-    </div>
+    </section>
   );
 }
 

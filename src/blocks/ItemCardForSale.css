@@ -72,6 +72,13 @@
   color: #fff;
 }
 
+@media screen and (max-width: 350px) {
+  .card__wrapper-forsale {
+    width: 320px;
+    height: 320px;
+  }
+}
+
 /* .card__wrapper-forsale {
   position: relative;
   overflow: hidden;
