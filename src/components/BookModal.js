@@ -11,18 +11,13 @@ const BookModal = ({
   onBook,
 }) => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
   useEffect(() => {
     setEmail(`${currentUser.email}`);
-  });
+  }, [currentUser.email]);
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
-  };
-
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
   };
 
   function handleSubmit(e) {
@@ -47,7 +42,7 @@ const BookModal = ({
         type="text"
         name="email"
         value={email}
-        placeholder={`${currentUser.email}`}
+        placeholder={currentUser.email}
         onChange={handleEmail}
         required
       />
@@ -57,8 +52,7 @@ const BookModal = ({
         type="text"
         name="Item"
         value={card.name}
-        placeholder={`I'd like to book this item: ${card.name}`}
-        onChange={handlePassword}
+        placeholder={card.name}
         required
       />
     </ModalWithForm>

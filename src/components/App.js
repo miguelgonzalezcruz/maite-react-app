@@ -20,7 +20,6 @@ import ProtectedRoute from "./ProtectedRoute";
 // ----------------- Utils -----------------
 import { defaultPublicFurniture } from "../utils/defaultPublicFurniture";
 import { register, login, authorize } from "../utils/auth";
-import { SECRET_KEY } from "../utils/constants";
 
 // ----------------- Context -----------------
 import CurrentUserContext from "../contexts/CurrentUserContext";
@@ -31,8 +30,6 @@ function App() {
   const [defaultFurniture, setDefaultFurniture] = useState([]);
   const [isLogged, setIsLogged] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
-  const [isRegisterPopupActive, setIsRegisterPopupActive] = useState(false);
-  const [isLoginPopupActive, setIsLoginPopupActive] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const history = useHistory();
 
@@ -93,7 +90,9 @@ function App() {
         }
       })
       .then(handleClose)
-      .catch((err) => console.log(err))
+      .catch((err) => {
+        alert(err.message || "Register failed");
+      })
       .finally(() => {
         setIsLoading(false);
       });
@@ -111,7 +110,9 @@ function App() {
         }
       })
       .then(handleClose)
-      .catch((err) => console.log(err))
+      .catch((err) => {
+        alert(err.message || "Login failed");
+      })
       .finally(() => {
         setIsLoading(false);
       });

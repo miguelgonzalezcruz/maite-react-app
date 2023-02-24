@@ -1,4 +1,3 @@
-import Hero from "./Hero";
 import ItemCard from "./ItemCard";
 import ItemCardForSale from "./ItemCardForSale";
 
