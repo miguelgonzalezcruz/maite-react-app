@@ -1,14 +1,21 @@
 import { useState, useEffect } from "react";
 import ModalWithForm from "./ModalWithForm";
 
-const BookModal = ({ isOpen, onClose, closePopup, closeEsc, onLogin }) => {
+const BookModal = ({
+  isOpen,
+  onClose,
+  closePopup,
+  closeEsc,
+  currentUser,
+  card,
+  onBook,
+}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   useEffect(() => {
-    setEmail("");
-    setPassword("");
-  }, [isOpen]);
+    setEmail(`${currentUser.email}`);
+  });
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -18,39 +25,39 @@ const BookModal = ({ isOpen, onClose, closePopup, closeEsc, onLogin }) => {
     setPassword(e.target.value);
   };
 
-  function handleBook(e) {
+  function handleSubmit(e) {
     e.preventDefault();
-    onLogin(email, password);
+    onBook(card);
   }
 
   return (
     <ModalWithForm
       isOpen={isOpen}
-      title="book"
+      title="Book this beautiful item"
       name="book"
       onClose={onClose}
       closeEsc={closeEsc}
       closePopup={closePopup}
-      handleSubmit={handleBook}
-      buttonText="book"
+      handleSubmit={handleSubmit}
+      buttonText="Book Now"
     >
       <label className="popup__input-label">Email</label>
       <input
         className="popup__input"
-        type="email"
+        type="text"
         name="email"
         value={email}
-        placeholder="Enter your email"
+        placeholder={`${currentUser.email}`}
         onChange={handleEmail}
         required
       />
-      <label className="popup__input-label">Password</label>
+      <label className="popup__input-label">Item</label>
       <input
         className="popup__input"
-        type="password"
-        name="password"
-        value={password}
-        placeholder="Enter your password"
+        type="text"
+        name="Item"
+        value={card.name}
+        placeholder={`I'd like to book this item: ${card.name}`}
         onChange={handlePassword}
         required
       />

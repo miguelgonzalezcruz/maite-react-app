@@ -20,7 +20,7 @@ import ProtectedRoute from "./ProtectedRoute";
 // ----------------- Utils -----------------
 import { defaultPublicFurniture } from "../utils/defaultPublicFurniture";
 import { register, login, authorize } from "../utils/auth";
-import { secretKey } from "../utils/constants";
+import { SECRET_KEY } from "../utils/constants";
 
 // ----------------- Context -----------------
 import CurrentUserContext from "../contexts/CurrentUserContext";
@@ -43,7 +43,7 @@ function App() {
 
   const handleCardBook = (card) => {
     setSelectedCard(card);
-    setIsPopupActive("cardPopup");
+    setIsPopupActive("book");
   };
 
   const handleClose = () => {
@@ -115,6 +115,12 @@ function App() {
       .finally(() => {
         setIsLoading(false);
       });
+  };
+
+  // ----------------- Book Modal -----------------
+
+  const handleBook = (card) => {
+    // pending to implement. This function will create a new business opportunity in Hubspot
   };
 
   // ----------------- Authorize -----------------
@@ -239,6 +245,9 @@ function App() {
               closeEsc={handleCloseEsc}
               closePopup={handleCloseEvent}
               onLogin={handleLogin}
+              onBook={handleBook}
+              currentUser={currentUser}
+              card={selectedCard}
             />
           )}
         </div>
