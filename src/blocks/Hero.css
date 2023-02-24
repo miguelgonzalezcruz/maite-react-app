@@ -85,6 +85,10 @@
     margin-right: auto;
     margin-left: auto;
   }
+
+  .hero__image-container {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 630px) {
