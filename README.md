@@ -8,11 +8,11 @@ Check the live version here: https://maiteapp.students.nomoredomainssbs.ru/
 
 ### `Project Stages`
 
-1. Front and back code + Registration + Login
-2. Upload to a live server + domain
-3. Admin to be able to upload furniture with pricing (+ delete it) + User be able to book furniture
-4. CRM API implementation
-5. Responsive Design
+1. Front and back code + Registration + Login --> Done
+2. Upload to a live server + domain --> Done
+3. CRM API implementation --> Done
+4. Responsive Design --> Done
+5. Admin to be able to upload furniture with pricing (+ delete it) + User be able to book furniture
 
 ### `Backend Code`
 
