@@ -57,4 +57,4 @@ const authorize = (token) => {
   });
 };
 
-export { register, login, authorize };
+export { register, login, authorize, request };

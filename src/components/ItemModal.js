@@ -8,7 +8,11 @@ function ItemModal({ card, onClose, closePopup, isOpen }) {
     >
       <div className="card__popup-container">
         <div className="card__popup-image-container">
-          <img className="card__popup-image" src={card.link} alt={card.name} />
+          <img
+            className="card__popup-image"
+            src={card.imageUrl}
+            alt={card.name}
+          />
         </div>
         <p className="card__popup-title">{card.name}</p>
         <p className="card__popup-description">{card.description}</p>
