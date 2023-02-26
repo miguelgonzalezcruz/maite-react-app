@@ -93,7 +93,6 @@ function App() {
     setIsLoading(true);
     register(email, password, name, surname, phone, typeofuser)
       .then((res) => {
-        console.log(res);
         if (res) {
           handleLogin(res.email, password);
           setIsLogged(true);
