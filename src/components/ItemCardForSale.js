@@ -2,10 +2,7 @@ import React from "react";
 
 import "../blocks/ItemCardForSale.css";
 
-import CurrentUserContext from "../contexts/CurrentUserContext";
-
 function ItemCardForSale(props) {
-  const currentUser = React.useContext(CurrentUserContext);
   const isBooked = props.card.booked === true;
 
   const openModal = () => {

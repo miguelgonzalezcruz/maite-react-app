@@ -8,7 +8,6 @@ import "../blocks/App.css";
 import Header from "./Header";
 import Hero from "./Hero";
 import Main from "./Main";
-import Profile from "./Profile";
 import ItemModal from "./ItemModal";
 import RegisterModal from "./RegisterModal";
 import LoginModal from "./LoginModal";
@@ -16,7 +15,6 @@ import BookModal from "./BookModal";
 import AddItemModal from "./AddItemModal";
 import About from "./About";
 import Footer from "./Footer";
-import ProtectedRoute from "./ProtectedRoute";
 
 // ----------------- Utils -----------------
 import { defaultPublicFurniture } from "../utils/defaultPublicFurniture";
@@ -24,9 +22,9 @@ import { register, login, authorize } from "../utils/auth";
 import {
   getItemsFromList,
   addItemsToList,
-  removeItemsFromList,
-  bookItem,
-  cancelBookItem,
+  // removeItemsFromList,
+  // bookItem,
+  // cancelBookItem,
 } from "../utils/api";
 
 // ----------------- Context -----------------
@@ -40,7 +38,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [isAddItemPopupActive, setIsAddItemPopupActive] = useState(false);
+  // const [isAddItemPopupActive, setIsAddItemPopupActive] = useState(false);
   const history = useHistory();
 
   const handleCardClick = (card) => {
@@ -244,10 +242,6 @@ function App() {
 
               <About />
             </Route>
-
-            <ProtectedRoute path="/about" isLogged={isLogged}>
-              <Profile />
-            </ProtectedRoute>
           </Switch>
 
           <Footer />

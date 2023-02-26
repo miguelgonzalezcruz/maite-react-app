@@ -46,7 +46,6 @@ const login = (email, password) => {
 };
 
 const authorize = (token) => {
-  console.log("authorize", token);
   return request(`${baseURL}/users/me`, {
     method: "GET",
     headers: {

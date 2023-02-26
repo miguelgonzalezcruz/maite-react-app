@@ -4,7 +4,6 @@ import ItemCardForSale from "./ItemCardForSale";
 
 import "../blocks/Main.css";
 
-import { useContext } from "react";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 
 function Main({ cards, handleCardClick, handleCardBook, isLogged, isAdmin }) {

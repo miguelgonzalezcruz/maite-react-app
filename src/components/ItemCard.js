@@ -1,11 +1,7 @@
 import React from "react";
 import "../blocks/ItemCard.css";
-import CurrentUserContext from "../contexts/CurrentUserContext";
 
 function ItemCard(props) {
-  const currentUser = React.useContext(CurrentUserContext);
-  const isBooked = props.card.booked === true;
-
   const openModal = () => {
     props.cardClick(props.card);
   };
