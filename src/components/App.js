@@ -167,10 +167,6 @@ function App() {
 
   // ----------------- Item Modal -----------------
 
-  // React.useEffect(() => {
-  //   setDefaultFurniture(defaultPublicFurniture);
-  // }, []);
-
   // ***************** Item Actions *****************
 
   // ----------------- Add Item -----------------

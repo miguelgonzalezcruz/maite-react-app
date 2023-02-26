@@ -28,7 +28,7 @@ function ItemCardForSale(props) {
       />
       <div className="card-forsale__content">
         <h2 className="card-forsale__content-title">
-          {props.name}, {props.price}
+          {props.name}, {props.price}€
         </h2>
         <div className="">
           <button
