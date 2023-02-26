@@ -14,7 +14,6 @@ function checkResponse(res) {
 }
 
 function request(url, options) {
-  console.log("request", url, options);
   return fetch(url, options).then(checkResponse);
 }
 
@@ -47,7 +46,6 @@ const login = (email, password) => {
 };
 
 const authorize = (token) => {
-  console.log("authorize", token);
   return request(`${baseURL}/users/me`, {
     method: "GET",
     headers: {
@@ -57,4 +55,4 @@ const authorize = (token) => {
   });
 };
 
-export { register, login, authorize };
+export { register, login, authorize, request };

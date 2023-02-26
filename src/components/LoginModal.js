@@ -1,7 +1,14 @@
 import { useState, useEffect } from "react";
 import ModalWithForm from "./ModalWithForm";
 
-const LoginModal = ({ isOpen, onClose, closePopup, closeEsc, onLogin }) => {
+const LoginModal = ({
+  isOpen,
+  onClose,
+  closePopup,
+  closeEsc,
+  onLogin,
+  buttonText,
+}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -32,7 +39,7 @@ const LoginModal = ({ isOpen, onClose, closePopup, closeEsc, onLogin }) => {
       closeEsc={closeEsc}
       closePopup={closePopup}
       handleSubmit={handleSubmit}
-      buttonText="login"
+      buttonText={buttonText}
     >
       <label className="popup__input-label">Email</label>
       <input

@@ -12,6 +12,8 @@ function Header({
   isLogged,
   currentUser,
   handleLogout,
+  isAdmin,
+  openAddItemPopup,
 }) {
   return (
     <header className="header">
@@ -26,17 +28,35 @@ function Header({
 
         <div className="navigation__container">
           {isLogged ? (
-            <>
-              {/* <Link to="/about" className="navigation__username"> */}
-              <p>Hello {currentUser.name}, you can start booking now.</p>
-              <button
-                className="navigation__button-login"
-                onClick={handleLogout}
-              >
-                Log Out
-              </button>
-              {/* </Link> */}
-            </>
+            <div className="navigation__container">
+              {isAdmin ? (
+                <>
+                  <p>Hello {currentUser.name}, you can adding items now.</p>
+                  <button
+                    className="navigation__button-login"
+                    onClick={openAddItemPopup}
+                  >
+                    Add Item
+                  </button>
+                  <button
+                    className="navigation__button-login"
+                    onClick={handleLogout}
+                  >
+                    Log Out
+                  </button>
+                </>
+              ) : (
+                <>
+                  <p>Hello {currentUser.name}, you can start booking now.</p>
+                  <button
+                    className="navigation__button-login"
+                    onClick={handleLogout}
+                  >
+                    Log Out
+                  </button>
+                </>
+              )}
+            </div>
           ) : (
             <>
               <button

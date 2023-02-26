@@ -8,18 +8,24 @@ import "../blocks/App.css";
 import Header from "./Header";
 import Hero from "./Hero";
 import Main from "./Main";
-import Profile from "./Profile";
 import ItemModal from "./ItemModal";
 import RegisterModal from "./RegisterModal";
 import LoginModal from "./LoginModal";
 import BookModal from "./BookModal";
+import AddItemModal from "./AddItemModal";
 import About from "./About";
 import Footer from "./Footer";
-import ProtectedRoute from "./ProtectedRoute";
 
 // ----------------- Utils -----------------
 import { defaultPublicFurniture } from "../utils/defaultPublicFurniture";
 import { register, login, authorize } from "../utils/auth";
+import {
+  getItemsFromList,
+  addItemsToList,
+  // removeItemsFromList,
+  // bookItem,
+  // cancelBookItem,
+} from "../utils/api";
 
 // ----------------- Context -----------------
 import CurrentUserContext from "../contexts/CurrentUserContext";
@@ -31,6 +37,8 @@ function App() {
   const [isLogged, setIsLogged] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+  // const [isAddItemPopupActive, setIsAddItemPopupActive] = useState(false);
   const history = useHistory();
 
   const handleCardClick = (card) => {
@@ -83,7 +91,6 @@ function App() {
     setIsLoading(true);
     register(email, password, name, surname, phone, typeofuser)
       .then((res) => {
-        console.log(res);
         if (res) {
           handleLogin(res.email, password);
           setIsLogged(true);
@@ -132,9 +139,11 @@ function App() {
         if (user) {
           setIsLogged(true);
           setCurrentUser(user);
+          setIsAdmin(user.typeofuser === "admin");
         } else {
           setIsLogged(false);
           setCurrentUser({});
+          setIsAdmin(false);
         }
       })
       .catch((err) => console.log(err));
@@ -155,7 +164,39 @@ function App() {
 
   // ----------------- Item Modal -----------------
 
-  React.useEffect(() => {
+  // ***************** Item Actions *****************
+
+  // ----------------- Add Item -----------------
+
+  const handleAddItemSubmit = (name, description, price, imageUrl, forsale) => {
+    setIsLoading(true);
+    addItemsToList(name, description, price, imageUrl, forsale)
+      .then((card) => {
+        setCardId(card);
+        setDefaultFurniture([card, ...defaultFurniture]);
+      })
+      .then(handleClose)
+      .catch((err) => {
+        alert(err.message || "Add item failed");
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
+
+  function setCardId(card) {
+    card.id = defaultFurniture.length + 1;
+  }
+
+  useEffect(() => {
+    getItemsFromList()
+      .then((items) => {
+        setDefaultFurniture(items);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  useEffect(() => {
     setDefaultFurniture(defaultPublicFurniture);
   }, []);
 
@@ -165,6 +206,7 @@ function App() {
         <div className="page__content">
           <Header
             isLogged={isLogged}
+            isAdmin={isAdmin}
             currentUser={currentUser}
             handleRegister={handleRegister}
             handleLogout={handleLogout}
@@ -173,6 +215,9 @@ function App() {
             }}
             openLoginPopup={() => {
               setIsPopupActive("login");
+            }}
+            openAddItemPopup={() => {
+              setIsPopupActive("addItem");
             }}
           />
           <Switch>
@@ -192,14 +237,11 @@ function App() {
                 handleCardBook={handleCardBook}
                 isLogged={isLogged}
                 currentUser={currentUser}
+                isAdmin={isAdmin}
               />
 
               <About />
             </Route>
-
-            <ProtectedRoute path="/about" isLogged={isLogged}>
-              <Profile />
-            </ProtectedRoute>
           </Switch>
 
           <Footer />
@@ -223,7 +265,7 @@ function App() {
               closeEsc={handleCloseEsc}
               closePopup={handleCloseEvent}
               onRegister={handleRegister}
-              buttonText={isLoading ? "Saving..." : "Save"}
+              buttonText={isLoading ? "Registering..." : "Register"}
             />
           )}
 
@@ -235,6 +277,7 @@ function App() {
               closeEsc={handleCloseEsc}
               closePopup={handleCloseEvent}
               onLogin={handleLogin}
+              buttonText={isLoading ? "Login ..." : "Login"}
             />
           )}
 
@@ -249,6 +292,18 @@ function App() {
               onBook={handleBook}
               currentUser={currentUser}
               card={selectedCard}
+            />
+          )}
+
+          {isPopupActive === "addItem" && (
+            <AddItemModal
+              isOpen={isPopupActive === "addItem"}
+              name="addItem"
+              onClose={handleClose}
+              closeEsc={handleCloseEsc}
+              closePopup={handleCloseEvent}
+              onAddItem={handleAddItemSubmit}
+              buttonText={isLoading ? "Saving..." : "Save"}
             />
           )}
         </div>
