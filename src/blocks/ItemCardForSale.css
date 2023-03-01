@@ -171,7 +171,7 @@
 .card-forsale__book-button {
   border: 1px solid #1a2513;
   border-radius: 5px;
-  background: #eef5e9;
+  background: #f8f9fa;
   margin: 0;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -188,5 +188,5 @@
 .card-forsale__book-button:hover {
   background: #6b705c;
   border: 1px solid #6b705c;
-  color: #eef5e9;
+  color: #f8f9fa;
 } */

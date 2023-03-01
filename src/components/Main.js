@@ -22,6 +22,9 @@ function Main({
         <div>
           {isAdmin ? (
             <>
+              <div>
+                <h1>Cards for Sale</h1>
+              </div>
               <div className="main">
                 <div className="hidden__cards">
                   {cards
@@ -32,14 +35,29 @@ function Main({
                         key={card._id}
                         card={card}
                         cardClick={() => handleCardClick(card)}
-                        bookClick={() => handleCardBook(card)}
-                        deleteClick={() => {
-                          if (card._id) {
-                            console.log(card._id);
-                            // Add a check for a valid _id property
-                            handleCardDelete(card._id); // Pass the card ID instead of the entire object
-                          }
-                        }}
+                        deleteClick={() => handleCardDelete(card._id)}
+                        image={card.imageUrl}
+                        price={card.price}
+                        name={card.name}
+                        isAdmin={isAdmin}
+                      />
+                    ))}
+                </div>
+              </div>
+              <div>
+                <h1>Public Cards</h1>
+              </div>
+              <div className="main">
+                <div className="hidden__cards">
+                  {cards
+                    .filter((card) => card.forsale === false)
+                    .map((card) => (
+                      <ItemCard
+                        currentUser={currentUser}
+                        key={card._id}
+                        card={card}
+                        cardClick={() => handleCardClick(card)}
+                        deleteClick={() => handleCardDelete(card._id)}
                         image={card.imageUrl}
                         price={card.price}
                         name={card.name}
@@ -62,13 +80,6 @@ function Main({
                         card={card}
                         cardClick={() => handleCardClick(card)}
                         bookClick={() => handleCardBook(card)}
-                        deleteClick={() => {
-                          if (card._id) {
-                            console.log(card._id);
-                            // Add a check for a valid _id property
-                            handleCardDelete(card._id); // Pass the card ID instead of the entire object
-                          }
-                        }}
                         image={card.imageUrl}
                         price={card.price}
                         name={card.name}
