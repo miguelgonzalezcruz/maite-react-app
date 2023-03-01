@@ -6,7 +6,14 @@ import "../blocks/Main.css";
 
 import CurrentUserContext from "../contexts/CurrentUserContext";
 
-function Main({ cards, handleCardClick, handleCardBook, isLogged, isAdmin }) {
+function Main({
+  cards,
+  handleCardClick,
+  handleCardBook,
+  handleCardDelete,
+  isLogged,
+  isAdmin,
+}) {
   const currentUser = React.useContext(CurrentUserContext);
 
   return (
@@ -26,9 +33,17 @@ function Main({ cards, handleCardClick, handleCardBook, isLogged, isAdmin }) {
                         card={card}
                         cardClick={() => handleCardClick(card)}
                         bookClick={() => handleCardBook(card)}
+                        deleteClick={() => {
+                          if (card._id) {
+                            console.log(card._id);
+                            // Add a check for a valid _id property
+                            handleCardDelete(card._id); // Pass the card ID instead of the entire object
+                          }
+                        }}
                         image={card.imageUrl}
                         price={card.price}
                         name={card.name}
+                        isAdmin={isAdmin}
                       />
                     ))}
                 </div>
@@ -47,9 +62,17 @@ function Main({ cards, handleCardClick, handleCardBook, isLogged, isAdmin }) {
                         card={card}
                         cardClick={() => handleCardClick(card)}
                         bookClick={() => handleCardBook(card)}
+                        deleteClick={() => {
+                          if (card._id) {
+                            console.log(card._id);
+                            // Add a check for a valid _id property
+                            handleCardDelete(card._id); // Pass the card ID instead of the entire object
+                          }
+                        }}
                         image={card.imageUrl}
                         price={card.price}
                         name={card.name}
+                        isAdmin={isAdmin}
                       />
                     ))}
                 </div>

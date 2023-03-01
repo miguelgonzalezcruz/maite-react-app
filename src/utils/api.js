@@ -27,8 +27,8 @@ const addItemsToList = (name, imageUrl, weather) => {
   });
 };
 
-const removeItemsFromList = (cardId) => {
-  return request(`${baseURL}/items/${cardId}`, {
+const removeItemsFromList = (card) => {
+  return request(`${baseURL}/items/${card}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",

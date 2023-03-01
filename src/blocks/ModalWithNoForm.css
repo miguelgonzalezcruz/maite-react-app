@@ -1,4 +1,4 @@
-.popup {
+.popupnf {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,29 +11,29 @@
   visibility: hidden;
 }
 
-.popup_open {
+.popupnf_open {
   visibility: visible;
 }
 
-.popup__content {
+.popupnf__content {
   position: relative;
   background-color: #fff;
   width: 496px;
   border-radius: 5px;
-  padding: 10px 0 10px 0px;
+  padding: 10px 0 20px 25px;
 }
 
-.popup__form {
+.popupnf__form {
   display: flex;
   flex-direction: column;
   margin-left: 28px;
   margin-right: 28px;
 }
 
-.popup__close {
+.popupnf__close {
   position: absolute;
-  top: 25px;
-  left: 455px;
+  top: 10px;
+  left: 485px;
   background-image: url("../images/close-icon.svg");
   background-color: transparent;
   border: none;
@@ -42,7 +42,7 @@
   cursor: pointer;
 }
 
-.popup__submit {
+.popupnf__submit {
   background-color: #000;
   border: none;
 
@@ -59,16 +59,16 @@
   cursor: pointer;
 }
 
-.popup__submit:hover {
+.popupnf__submit:hover {
   transition: ease-in-out 0.1s;
   background: rgba(0, 0, 0, 0.6);
 }
 
-.popup__submit:disabled {
+.popupnf__submit:disabled {
   background: rgba(0, 0, 0, 0.3);
 }
 
-.popup__title {
+.popupnf__title {
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
@@ -77,7 +77,7 @@
   margin: 28px 0 24px 0;
 }
 
-.popup__input-label {
+.popupnf__input-label {
   color: #000;
   font-size: 16px;
   font-weight: 700;
@@ -87,7 +87,7 @@
   margin-bottom: 8px;
 }
 
-.popup__input-title {
+.popupnf__input-title {
   color: #000;
   font-size: 16px;
   font-weight: 700;
@@ -97,7 +97,7 @@
   margin-bottom: 12px;
 }
 
-.popup__input {
+.popupnf__input {
   border: none;
   border-bottom: 1px solid #000;
   margin-bottom: 28px;
@@ -110,7 +110,7 @@
   text-align: left;
 }
 
-.popup__input::placeholder {
+.popupnf__input::placeholder {
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
@@ -119,7 +119,7 @@
   color: rgba(0, 0, 0, 0.5);
 }
 
-.popup__input-radio {
+.popupnf__input-radio {
   appearance: none;
   margin: 0 8px 0 0;
   display: inline-block;
@@ -132,19 +132,19 @@
   border-radius: 50%;
 }
 
-.popup__input-radio:checked {
+.popupnf__input-radio:checked {
   background-color: #000;
   color: #000;
   border: 1px solid #000;
 }
 
-.popup__input-radio:disabled {
+.popupnf__input-radio:disabled {
   background-color: #fff;
   color: #fff;
   border: 1px solid #fff;
 }
 
-.popup__input-text {
+.popupnf__input-text {
   display: flex;
   align-items: center;
 
@@ -157,6 +157,6 @@
   margin-bottom: 8px;
 }
 
-.popup__input-text:nth-of-type(3n) {
+.popupnf__input-text:nth-of-type(3n) {
   margin-bottom: 0;
 }

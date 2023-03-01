@@ -72,6 +72,30 @@
   color: #fff;
 }
 
+.card-forsale__delete-button {
+  border: 1px solid #1a2513;
+  border-radius: 2px;
+  background: #fff;
+  margin: 0;
+  margin-right: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-family: "Inter", "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #1a2513;
+  cursor: pointer;
+}
+
+.card-forsale__delete-button:hover {
+  background: #e63946;
+  border: 1px solid #e63946;
+  color: #fff;
+}
+
 @media screen and (max-width: 350px) {
   .card__wrapper-forsale {
     width: 320px;
