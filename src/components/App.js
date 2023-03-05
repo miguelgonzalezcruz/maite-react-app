@@ -203,7 +203,7 @@ function App() {
       .then(() => {
         console.log("Item deleted");
         const newDefaultFurniture = defaultFurniture.filter(
-          (card) => card.id !== selectedCard.id
+          (item) => card.id !== item.id
         );
         setDefaultFurniture(newDefaultFurniture);
       })
