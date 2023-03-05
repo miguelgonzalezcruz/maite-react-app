@@ -1,5 +1,5 @@
 import React from "react";
-import "../blocks/ModalWithForm.css";
+import "../blocks/ModalWithNoForm.css";
 
 function ModalWithNoForm({
   isOpen,
@@ -11,14 +11,14 @@ function ModalWithNoForm({
 }) {
   return (
     <div
-      className={`popup popup__${name} ${isOpen ? `popup_open` : ""}`}
+      className={`popupnf popupnf__${name} ${isOpen ? `popupnf_open` : ""}`}
       onClick={closePopup}
     >
-      <div className="popup__content">
-        <h2 className="popup__title">{title}</h2>
+      <div className="popupnf__content">
+        <h2 className="popupnf__title">{title}</h2>
         {children}
 
-        <button className="popup__close" onClick={closePopup}></button>
+        <button className="popupnf__close" onClick={closePopup}></button>
       </div>
     </div>
   );

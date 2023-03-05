@@ -31,7 +31,9 @@ function Header({
             <div className="navigation__container">
               {isAdmin ? (
                 <>
-                  <p>Hello {currentUser.name}, you can adding items now.</p>
+                  <p>
+                    Hello {currentUser.name}, you can start adding items now.
+                  </p>
                   <button
                     className="navigation__button-login"
                     onClick={openAddItemPopup}

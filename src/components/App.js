@@ -22,7 +22,7 @@ import { register, login, authorize } from "../utils/auth";
 import {
   getItemsFromList,
   addItemsToList,
-  // removeItemsFromList,
+  removeItemsFromList,
   // bookItem,
   // cancelBookItem,
 } from "../utils/api";
@@ -38,8 +38,13 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [isRendered, setIsRendered] = useState(false);
   // const [isAddItemPopupActive, setIsAddItemPopupActive] = useState(false);
   const history = useHistory();
+
+  const handleRender = () => {
+    setIsRendered(!isRendered);
+  };
 
   const handleCardClick = (card) => {
     setSelectedCard(card);
@@ -49,6 +54,11 @@ function App() {
   const handleCardBook = (card) => {
     setSelectedCard(card);
     setIsPopupActive("book");
+  };
+
+  const handleCardDelete = (card) => {
+    setSelectedCard(card);
+    handleDeleteItem(card);
   };
 
   const handleClose = () => {
@@ -184,6 +194,26 @@ function App() {
       });
   };
 
+  // ----------------- Remove Item -----------------
+
+  const handleDeleteItem = (card) => {
+    setIsLoading(true);
+    console.log(card);
+    removeItemsFromList(card)
+      .then(() => {
+        console.log("Item deleted");
+        const newDefaultFurniture = defaultFurniture.filter(
+          (item) => card.id !== item.id
+        );
+        setDefaultFurniture(newDefaultFurniture);
+      })
+      .then(handleRender)
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
+
   function setCardId(card) {
     card.id = defaultFurniture.length + 1;
   }
@@ -235,9 +265,11 @@ function App() {
                 cards={defaultFurniture}
                 handleCardClick={handleCardClick}
                 handleCardBook={handleCardBook}
+                handleCardDelete={handleCardDelete}
                 isLogged={isLogged}
                 currentUser={currentUser}
                 isAdmin={isAdmin}
+                card={selectedCard}
               />
 
               <About />

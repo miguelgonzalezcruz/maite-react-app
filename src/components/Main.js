@@ -6,7 +6,14 @@ import "../blocks/Main.css";
 
 import CurrentUserContext from "../contexts/CurrentUserContext";
 
-function Main({ cards, handleCardClick, handleCardBook, isLogged, isAdmin }) {
+function Main({
+  cards,
+  handleCardClick,
+  handleCardBook,
+  handleCardDelete,
+  isLogged,
+  isAdmin,
+}) {
   const currentUser = React.useContext(CurrentUserContext);
 
   return (
@@ -15,6 +22,9 @@ function Main({ cards, handleCardClick, handleCardBook, isLogged, isAdmin }) {
         <div>
           {isAdmin ? (
             <>
+              <div>
+                <h1>Cards for Sale</h1>
+              </div>
               <div className="main">
                 <div className="hidden__cards">
                   {cards
@@ -25,10 +35,33 @@ function Main({ cards, handleCardClick, handleCardBook, isLogged, isAdmin }) {
                         key={card._id}
                         card={card}
                         cardClick={() => handleCardClick(card)}
-                        bookClick={() => handleCardBook(card)}
+                        deleteClick={() => handleCardDelete(card._id)}
                         image={card.imageUrl}
                         price={card.price}
                         name={card.name}
+                        isAdmin={isAdmin}
+                      />
+                    ))}
+                </div>
+              </div>
+              <div>
+                <h1>Public Cards</h1>
+              </div>
+              <div className="main">
+                <div className="hidden__cards">
+                  {cards
+                    .filter((card) => card.forsale === false)
+                    .map((card) => (
+                      <ItemCard
+                        currentUser={currentUser}
+                        key={card._id}
+                        card={card}
+                        cardClick={() => handleCardClick(card)}
+                        deleteClick={() => handleCardDelete(card._id)}
+                        image={card.imageUrl}
+                        price={card.price}
+                        name={card.name}
+                        isAdmin={isAdmin}
                       />
                     ))}
                 </div>
@@ -50,6 +83,7 @@ function Main({ cards, handleCardClick, handleCardBook, isLogged, isAdmin }) {
                         image={card.imageUrl}
                         price={card.price}
                         name={card.name}
+                        isAdmin={isAdmin}
                       />
                     ))}
                 </div>
