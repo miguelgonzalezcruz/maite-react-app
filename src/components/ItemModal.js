@@ -1,3 +1,4 @@
+import React from "react";
 import "../blocks/ItemModal.css";
 
 function ItemModal({ card, onClose, closePopup, isOpen }) {

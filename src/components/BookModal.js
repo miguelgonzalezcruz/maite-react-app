@@ -1,3 +1,4 @@
+import React from "react";
 import ModalWithNoForm from "./ModalWithNoForm";
 
 const BookModal = ({ isOpen, onClose, closePopup, closeEsc, card }) => {
