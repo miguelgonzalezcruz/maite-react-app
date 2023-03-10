@@ -1,0 +1,14 @@
+.page {
+  background-color: #eef5e9;
+  margin: auto;
+  font-family: "Cabinet Grotesk", "Arial", sans-serif;
+  font-weight: 500;
+  min-height: 100vh;
+  color: #1a2513;
+}
+
+.page__content {
+  max-width: 1440px;
+  min-width: 320px;
+  margin: auto;
+}
