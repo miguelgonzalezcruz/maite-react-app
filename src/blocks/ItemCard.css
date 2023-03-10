@@ -56,6 +56,48 @@
   overflow: hidden;
 }
 
+.card__delete-button {
+  position: absolute;
+  top: 27px;
+  right: 27px;
+  border: 1px solid #1a2513;
+  border-radius: 2px;
+  background: #fff;
+  margin: 0;
+  margin-right: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-family: "Inter", "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #1a2513;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.card__delete-button:hover {
+  background: #e63946;
+  border: 1px solid #e63946;
+  color: #fff;
+}
+
+.card__like-container {
+  padding-left: 10px;
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (max-width: 350px) {
+  .card__wrapper {
+    width: 320px;
+    height: 320px;
+  }
+}
+
 /* .card__like {
   width: 21px;
   height: 19px;

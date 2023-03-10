@@ -4,6 +4,7 @@ import "../blocks/ItemCardForSale.css";
 
 function ItemCardForSale(props) {
   const isBooked = props.card.booked === true;
+  const isAdmin = props.isAdmin === true;
 
   const openModal = () => {
     props.cardClick(props.card);
@@ -11,6 +12,10 @@ function ItemCardForSale(props) {
 
   const bookModal = () => {
     props.bookClick(props.card);
+  };
+
+  const deleteItem = () => {
+    props.deleteClick(props.card);
   };
 
   return (
@@ -28,17 +33,27 @@ function ItemCardForSale(props) {
           {props.name}, {props.price}€
         </h2>
         <div className="">
-          <button
-            className={
-              isBooked
-                ? "card-forsale__book-button"
-                : "card-forsale__book-button"
-            }
-            type="button"
-            onClick={bookModal}
-          >
-            Book Now
-          </button>
+          {isAdmin ? (
+            <button
+              className="card-forsale__delete-button"
+              type="button"
+              onClick={deleteItem}
+            >
+              Delete
+            </button>
+          ) : (
+            <button
+              className={
+                isBooked
+                  ? "card-forsale__book-button"
+                  : "card-forsale__book-button"
+              }
+              type="button"
+              onClick={bookModal}
+            >
+              Book Now
+            </button>
+          )}
         </div>
       </div>
     </div>
