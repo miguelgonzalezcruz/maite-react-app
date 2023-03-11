@@ -50,7 +50,7 @@ const AddItemModal = ({
   return (
     <ModalWithForm
       isOpen={isOpen}
-      title="Add new item"
+      title="Añadir producto"
       name="add-item"
       buttonText={buttonText}
       onClose={onClose}
@@ -58,47 +58,47 @@ const AddItemModal = ({
       closeEsc={closeEsc}
       handleSubmit={handleSubmit}
     >
-      <label className="popup__input-label">Name</label>
+      <label className="popup__input-label">Nombre</label>
       <input
         className="popup__input"
         type="text"
         name="name"
-        placeholder="Name"
+        placeholder="Nombre"
         value={name}
         onChange={handleName}
         required
       />
-      <label className="popup__input-label">Price</label>
+      <label className="popup__input-label">Precio</label>
       <input
         className="popup__input"
         type="text"
         name="price"
-        placeholder="Price"
+        placeholder="Precio"
         value={price}
         onChange={handlePrice}
         required
       />
-      <label className="popup__input-label">Image URL</label>
+      <label className="popup__input-label">URL de la imagen</label>
       <input
         className="popup__input"
         type="url"
         name="image"
-        placeholder="Image URL"
+        placeholder="URL de la imagen"
         value={imageUrl}
         onChange={handleImageUrl}
         required
       />
-      <label className="popup__input-label">Description</label>
+      <label className="popup__input-label">Descripción</label>
       <input
         className="popup__input"
         type="text"
         name="description"
-        placeholder="Description"
+        placeholder="Descripción"
         value={description}
         onChange={handleDescription}
         required
       />
-      <label className="popup__input-label">For Sale</label>
+      <label className="popup__input-label">Tipo de artículo</label>
       <label className="popup__input-text" htmlFor="sale">
         <input
           className="popup__input-radio"
@@ -109,7 +109,7 @@ const AddItemModal = ({
           onChange={handleForSale}
           required
         />
-        Yes
+        A la venta
       </label>
       <label className="popup__input-text" htmlFor="not-sale">
         <input
@@ -121,7 +121,7 @@ const AddItemModal = ({
           onChange={handleForSale}
           required
         />
-        No
+        Vendido-Exposición
       </label>
     </ModalWithForm>
   );

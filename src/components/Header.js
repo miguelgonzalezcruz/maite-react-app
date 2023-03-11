@@ -31,28 +31,28 @@ function Header({
             <div className="navigation__container">
               {isAdmin ? (
                 <>
-                  <p>Hello {currentUser.name}, you can add items now.</p>
+                  <p>Hola {currentUser.name}, ¿qué novedades tienes hoy?</p>
                   <button
                     className="navigation__button-login"
                     onClick={openAddItemPopup}
                   >
-                    Add Item
+                    Añadir Mueble
                   </button>
                   <button
                     className="navigation__button-login"
                     onClick={handleLogout}
                   >
-                    Log Out
+                    Cerrar Sesión
                   </button>
                 </>
               ) : (
                 <>
-                  <p>Hello {currentUser.name}, you can start booking now.</p>
+                  <p>Hola {currentUser.name}, ¿qué mueble te apetece hoy?</p>
                   <button
                     className="navigation__button-login"
                     onClick={handleLogout}
                   >
-                    Log Out
+                    Cerrar Sesión
                   </button>
                 </>
               )}
@@ -63,13 +63,13 @@ function Header({
                 className="navigation__button-signup"
                 onClick={openRegisterPopup}
               >
-                Sign Up
+                Regístrate
               </button>
               <button
                 className="navigation__button-login"
                 onClick={openLoginPopup}
               >
-                Log In
+                Entrar
               </button>
             </>
           )}

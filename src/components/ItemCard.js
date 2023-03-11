@@ -21,7 +21,7 @@ function ItemCard(props) {
             type="button"
             onClick={deleteItem}
           >
-            Delete
+            Borrar
           </button>
         ) : null}
       </div>

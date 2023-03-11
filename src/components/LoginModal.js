@@ -33,7 +33,7 @@ const LoginModal = ({
   return (
     <ModalWithForm
       isOpen={isOpen}
-      title="login"
+      title="Entrar"
       name="login"
       onClose={onClose}
       closeEsc={closeEsc}
@@ -47,17 +47,17 @@ const LoginModal = ({
         type="email"
         name="email"
         value={email}
-        placeholder="Enter your email"
+        placeholder="Tu email"
         onChange={handleEmail}
         required
       />
-      <label className="popup__input-label">Password</label>
+      <label className="popup__input-label">Contraseña</label>
       <input
         className="popup__input"
         type="password"
         name="password"
         value={password}
-        placeholder="Enter your password"
+        placeholder="Introduce tu contraseña"
         onChange={handlePassword}
         required
       />

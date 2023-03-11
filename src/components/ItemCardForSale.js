@@ -39,7 +39,7 @@ function ItemCardForSale(props) {
               type="button"
               onClick={deleteItem}
             >
-              Delete
+              Borrar
             </button>
           ) : (
             <button
@@ -51,7 +51,7 @@ function ItemCardForSale(props) {
               type="button"
               onClick={bookModal}
             >
-              Book Now
+              Reserva ahora
             </button>
           )}
         </div>

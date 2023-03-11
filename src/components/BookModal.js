@@ -11,12 +11,14 @@ const BookModal = ({ isOpen, onClose, closePopup, closeEsc, card }) => {
       buttonText="Book Now"
     >
       <div>
-        <h1>Book this beautiful {card.name}</h1>
-        <p>Just send me an email to example@email.com.</p>
-        <p>Please remember to mention the item information:</p>
-        <p>Item: {card.name}</p>
-        <p>Price: {card.price}</p>
-        <p>Description: {card.description}</p>
+        <h1>Reserva: {card.name}</h1>
+        <p>Envíame un email a maitereciclando@gmail.com</p>
+        <p>Menciona esta información en tu mensaje:</p>
+        <ul>
+          <li>Artículo: {card.name}</li>
+          <li>Precio: {card.price}</li>
+          <li>Descripción: {card.description}</li>
+        </ul>
       </div>
     </ModalWithNoForm>
   );

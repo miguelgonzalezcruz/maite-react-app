@@ -56,7 +56,7 @@ const RegisterModal = ({
   return (
     <ModalWithForm
       isOpen={isOpen}
-      title="register"
+      title="Regístrate ahora"
       name="register"
       onClose={onClose}
       closeEsc={closeEsc}
@@ -74,43 +74,43 @@ const RegisterModal = ({
         onChange={handleEmail}
         required
       />
-      <label className="popup__input-label">Password</label>
+      <label className="popup__input-label">Contraseña</label>
       <input
         className="popup__input"
         type="password"
         name="password"
         value={password}
-        placeholder="minlength: 8"
+        placeholder="Mínimo 4 caracteres"
         onChange={handlePassword}
         required
       />
-      <label className="popup__input-label">Name</label>
+      <label className="popup__input-label">Nombre</label>
       <input
         className="popup__input"
         type="text"
         name="name"
         value={name}
-        placeholder="Enter name"
+        placeholder="Tu nombre"
         onChange={handleName}
         required
       />
-      <label className="popup__input-label">Surname</label>
+      <label className="popup__input-label">Apellido</label>
       <input
         className="popup__input"
         type="text"
         name="surname"
         value={surname}
-        placeholder="Enter surname"
+        placeholder="Tu apellido"
         onChange={handleSurname}
         required
       />
-      <label className="popup__input-label">Phone</label>
+      <label className="popup__input-label">Teléfono</label>
       <input
         className="popup__input"
         type="tel"
         name="phone"
         value={phone}
-        placeholder="minlength: 5, maxlength: 20"
+        placeholder="Tu teléfono"
         onChange={handlePhone}
         required
       />
